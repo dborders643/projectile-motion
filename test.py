@@ -1,32 +1,30 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Givens
-v0 = 10.0       # launch speed [m/s]
-phi = 45.0      # launch angle [deg]
-t0 = 0.0        # initial launch time [s]
-t = 10.0        # final time [s]
-x0 = 0.0        # launch position (horizontal component) [m]
-y0 = 0.0        # launch position (vertical component) [m]
+# ----------Setup---------- 
+v0 = 10.0                          # launch speed [m/s]
+phi_deg = 45.0                      # launch angle [deg]
+phi = np.deg2rad(phi_deg)           # launch angle [rad]
+vx0 = v0*np.cos(phi)                # launch speed (horizontal component) [m/s] 
+vy0 = v0*np.sin(phi)                # launch speed (vertical component) [m/s]
+t0 = 0.0                            # initial launch time [s]
+x0 = 0.0                            # launch position (horizontal component) [m]
+y0 = 0.0                            # launch position (vertical component) [m]
+g = 9.81                            # gravational constant [m/s^2]
+tf = 2 * vy0/g                      # final time [s]
+t = np.linspace(t0, tf, num=100)    # time array [s]
 
-# Setup 
-dt = np.linspace(t0, t, num=1000)
-x = np.zeros_like(dt)
-# Preallocation
-y = np.zeros_like(dt)
-vx = np.zeros_like(dt)
-vy = np.zeros_like(dt)
-
-vx0 = v0*np.cos(phi)
-vy0 = v0*np.sin(phi)
-
-np.cos()
-
-# Equations
-for i in range(np.size(dt)):
-    
-
-    # Update Equations (Euler Method)
-    x(i+1) = x(i) + dvxdt(i)*dt(i)
-    y(i+1) = y(i) + dvydt(i)*dt(i)
-# Visualize 
+# ----------Logic----------
+vx = vx0
+vy = vy0 - g*t
+x = x0 + vx0*t
+y = y0 + vy0*t - 0.5*g*t**2
+# ----------Debug----------
+print(f'x values: {x[0:6]}')
+print(f'y values: {y[0:6]}')
+# ----------Visual---------- 
+plt.plot(x, y)
+plt.xlabel("Horizontal Distance (m)")
+plt.ylabel("Vertical Distance (m)")
+plt.title("Projectile Motion")
+plt.show()
