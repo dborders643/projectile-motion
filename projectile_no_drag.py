@@ -38,7 +38,7 @@ def update(i):
 ani = FuncAnimation(
     fig, 
     update, 
-    frames=len(t),
+    frames=range(1, len(t), 5),
     init_func=init, 
     interval=1)
 plt.show()

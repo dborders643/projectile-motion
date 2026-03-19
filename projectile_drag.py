@@ -69,7 +69,7 @@ def update(i):
     ball.set_data([x[i]], [y[i]])
     return ball,
 
-ani = FuncAnimation(fig, update, frames=len(x),
+ani = FuncAnimation(fig, update, frames=range(1, len(x), 2),
                     init_func=init, interval=20)
 ax.set_xlabel("Horizontal Distance (m)")
 ax.set_ylabel("Vertical Distance (m)")
