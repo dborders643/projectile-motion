@@ -6,7 +6,7 @@ import numpy as np
 v = 1.0                                 # wave speed [m/s]
 Lx = 1.0                                # x length [m]
 Ly = 1.0                                # y length [m]
-tf = 10.0                               # final time [s]
+tf = 25.0                               # final time [s]
 nx = 100                                # number of x spatial points
 ny = 100                                # number of y spatial points
 nt = 4000                               # number of time points
