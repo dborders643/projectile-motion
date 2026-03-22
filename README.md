@@ -69,3 +69,33 @@ python real_pendulum.py
 - [ ] 2D drum membrane
 - [ ] Monte Carlo simulation
 - [ ] N-body gravity
+
+# Gyroscope Animation
+
+This program visualizes the phenomenon of gyroscopic behavior using vector dynamics.
+
+- **Linear vectors:** $\vec{r}$, $\vec{p}$, $\vec{F}$
+- **Angular vectors:** $\vec{r}$, $\vec{L}$, $\vec{\tau}$
+
+The simulation demonstrates a spinning object with large angular momentum. In the absence of external dissipation (e.g., friction), the system exhibits ideal gyroscopic precession, where the angular momentum vector changes direction while maintaining its magnitude.
+
+Friction and other damping effects are neglected to allow the gyroscopic motion to persist indefinitely and clearly illustrate the underlying physics.
+
+### Vector Definitions
+
+- $\vec{r}$: Position vector from the axis of rotation to the point of application of the force $\vec{F}$
+
+- $\vec{p}$: Linear momentum vector, defined as  
+  $\vec{p} = m\vec{v}$, and pointing in the same direction as the velocity $\vec{v}$
+
+- $\vec{F}$: Force vector, defined by  
+  $\vec{F} = \frac{d\vec{p}}{dt}$
+
+- $\vec{L}$: Angular momentum vector, defined as  
+  $\vec{L} = \vec{r} \times \vec{p}$  
+  It is perpendicular to the plane formed by $\vec{r}$ and $\vec{p}$
+
+- $\vec{\tau}$: Torque vector, defined as  
+  $\vec{\tau} = \vec{r} \times \vec{F}$  
+  It is perpendicular to the plane formed by $\vec{r}$ and $\vec{F}$, and satisfies  
+  $\vec{\tau} = \frac{d\vec{L}}{dt}$
